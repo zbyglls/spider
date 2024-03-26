@@ -7,8 +7,8 @@ def get_cookie():
         'username': 'admin',
         'password': 'admin'
     }
-    res = requests.post(url, data=form)
-    return res.history[0].cookies
+    res = requests.post(url, data=form, allow_redirects=False)
+    return res.cookies
 
 
 def main():
